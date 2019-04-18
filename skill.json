@@ -1,0 +1,57 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:435360962839:function:9b470958-d165-4341-add4-9079bef5529f:Release_0"
+        },
+        "interfaces": []
+      }
+    },
+    "permissions": [],
+    "privacyAndCompliance": {
+      "locales": {
+        "en-US": {}
+      },
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "YinYang name",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/efc8/fdccda795803455abc5e97694625a3af/APP_ICON?versionId=mf8BsWd.w1CB9HR5AM9xT21a3r.q9Bqq&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190418T071045Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAJFEYRBGIHK2BBYKA%2F20190418%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=b6858998ada0ce39f2bb2f7b7524d8cd83d25542ce2b141d016b571ca62fac99",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/78f6/19c0a50eb32f42fdb276e744b6072e8a/APP_ICON_LARGE?versionId=q8quu8Zl88G9SrTKYHqWXtZmOPcpAhur&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190418T071045Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAJFEYRBGIHK2BBYKA%2F20190418%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=27b415e82a0c7f082a4cffd09eb6d9d53bf40a9d8a5baee9142acbc1eff848fa",
+          "summary": "\"YinYang name\" analyze the positive and negative personality features from your first name.",
+          "description": "Because your name can tell you a lot of things about you... The energy of your name flows to be balanced... Remember your name can both help you and hurt you! This mystic skill will analyze your name to let you know your positive values... But because of the YinYang energy, it will also inform you about your negative values.",
+          "examplePhrases": [
+            "Alexa, open YinYang name",
+            "I want to analyze my name"
+          ],
+          "keywords": [
+            "name",
+            "analysis",
+            "yin",
+            "yang",
+            "yinyang",
+            "positivity",
+            "negativity",
+            "health",
+            "name",
+            "characteristics"
+          ]
+        }
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Just a code challenge request for an internship. It's not going to be distributed.",
+      "category": "GAMES",
+      "distributionCountries": [
+        "US",
+        "ES"
+      ]
+    }
+  }
+}

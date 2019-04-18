@@ -1,0 +1,271 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "yinyang name",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "cancel"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "I need help",
+            "Can you help me",
+            "Help"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "exit",
+            "stop"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "nameAnalysisIntent",
+          "slots": [
+            {
+              "name": "firstName",
+              "type": "AMAZON.US_FIRST_NAME",
+              "samples": [
+                "{firstName}",
+                "My first name is {firstName}",
+                "This is {firstName}",
+                "I'm {firstName}",
+                "My name is {firstName}"
+              ]
+            },
+            {
+              "name": "gender",
+              "type": "GENDER",
+              "samples": [
+                "{gender}",
+                "I'm a {gender}",
+                "My gender is {gender}",
+                "I am {gender}"
+              ]
+            }
+          ],
+          "samples": [
+            "other name",
+            "Try other name",
+            "Try another name",
+            "{firstName}",
+            "I'm {firstName}",
+            "My first name is {firstName}",
+            "My first name is {firstName} and my gender is {gender}",
+            "I want to analyze my name"
+          ]
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": [
+            "start over",
+            "start again",
+            "restart"
+          ]
+        },
+        {
+          "name": "healthAnalysisIntent",
+          "slots": [
+            {
+              "name": "health",
+              "type": "YES_NO",
+              "samples": [
+                "{health}"
+              ]
+            }
+          ],
+          "samples": [
+            "{health}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "female",
+                "synonyms": [
+                  "women",
+                  "girl",
+                  "woman",
+                  "feminine"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "male",
+                "synonyms": [
+                  "men",
+                  "boy",
+                  "man",
+                  "masculine"
+                ]
+              }
+            }
+          ],
+          "name": "GENDER"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "DJ"
+              }
+            },
+            {
+              "name": {
+                "value": "Josema"
+              }
+            },
+            {
+              "name": {
+                "value": "Juancar"
+              }
+            }
+          ],
+          "name": "AMAZON.US_FIRST_NAME"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "no",
+                "synonyms": [
+                  "I don't think so",
+                  "never mind"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Yes",
+                "synonyms": [
+                  "let's do it",
+                  "of course"
+                ]
+              }
+            }
+          ],
+          "name": "YES_NO"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "nameAnalysisIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "firstName",
+              "type": "AMAZON.US_FIRST_NAME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.688709896136.1409053513155"
+              }
+            },
+            {
+              "name": "gender",
+              "type": "GENDER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.688709896136.596199822733"
+              }
+            }
+          ],
+          "delegationStrategy": "SKILL_RESPONSE"
+        },
+        {
+          "name": "healthAnalysisIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "health",
+              "type": "YES_NO",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.14370165112.723233497430"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.464431900473.327796518642.1031119019594"
+                }
+              ]
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.688709896136.596199822733",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Beautiful name {firstName} , are you male or female?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Hi {firstName} , what is your gender?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.688709896136.1409053513155",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Let's start. What is your first name?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1502079157411.808386934181.1119900405456",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please respond with yes or no, Do you want to her your heath analysis?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.14370165112.723233497430",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Now, do you want to hear your health analysis?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.464431900473.327796518642.1031119019594",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please response with YES or NO"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "92"
+}
