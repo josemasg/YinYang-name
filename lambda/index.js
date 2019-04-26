@@ -105,7 +105,7 @@ const attributes = handlerInput.attributesManager.getSessionAttributes();
     var healthAlgorithm=equation[0]+equation[1];
     while ((healthAlgorithm<0)||(healthAlgorithm>healthAnalysis.length-1)){
         healthAlgorithm=healthAlgorithm-nameLen;
-        if(healthAlgorithm){
+        if(healthAlgorithm<0){
             healthAlgorithm=Math.abs(healthAlgorithm);
         }
     }
